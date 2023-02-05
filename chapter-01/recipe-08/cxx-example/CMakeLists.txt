@@ -24,6 +24,10 @@ add_library(geometry
   )
 
 target_compile_options(geometry
+  ### The visibility levels ###
+  # PRIVATE:   Only applied to the given target and not to other target consuming it
+  # INTERFACE: Compile options on a given target will only be applied to targets consuming it
+  # PIBULIC:   Compile options will be applied to the given target and all other target consuming it
   PRIVATE
     ${flags}
   )
